@@ -1,0 +1,18 @@
+<div>
+	<h1>Activities</h1>
+	<div ng-controller="activitiesCtrl">
+		<div>
+			<input ng-model="newActivity.name">
+			<br>
+			<button ng-click="save()">sacuvaj</button>
+		</div>
+		<ul>
+			<li ng-repeat="activity in activities">
+				{{activity.id}},{{activity.name}} 
+				<button ng-click="delete(activity.id)">obrisi</button>
+				<button ng-click="setForUpdate(activity)">izmeni</button>
+				<button ng-click="gotoActivity()">prikazi na novoj stranici</button>
+			</li>
+		</ul>
+	</div>
+</div>
