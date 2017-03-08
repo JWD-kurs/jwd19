@@ -1,0 +1,36 @@
+<div>
+	<h1>Activities</h1>
+	<div ng-controller="activitiesCtrl">
+		<div>
+			<form class="form">
+				<div>
+					<label for="name">naziv:</label>
+					<input id="name" class="form-control" ng-model="newActivity.name"/>
+				</div>
+				<button class="btn btn-primary" ng-click="save()">sacuvaj</button>
+			</form>
+		</div>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>naziv</th>
+					<th>akcija</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="activity in activities">
+					<td>{{activity.id}}</td>
+					<td>{{activity.name}}</td>
+					<td>				
+						<div class="btn-group">
+							<button class="btn btn-sm btn-danger" ng-click="delete(activity.id)">obrisi</button>
+							<button class="btn btn-sm btn-success" ng-click="setForUpdate(activity)">izmeni</button>
+							<button class="btn btn-sm btn-primary" ng-click="gotoActivity(activity.id)">prikazi na novoj stranici</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
